@@ -68,8 +68,8 @@
 }
 
 .postImg{
-    height: 285px;
-    width: 500px;
+    max-height: 285px;
+    max-width: 500px;
     border-radius: 5%;
     margin-left: 35px;
 }

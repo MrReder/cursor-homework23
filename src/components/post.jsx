@@ -8,8 +8,6 @@ import footerRetwIcon from '../img/retw.svg';
 import footerLikeIcon from '../img/like.svg';
 import footerShareIcon from '../img/share.svg';
 
-
-
 export const Post = ({ userAvatar, userName, nick, date, userText, postImg,
     footerRespIconContent, footerRetwIconContent, footerLikeIconContent }) => {
     return (
