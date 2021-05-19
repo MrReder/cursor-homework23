@@ -50,8 +50,8 @@
 }
 
 .avatar{
-    height: 48px;
-    width: 48px;
+    max-height: 48px;
+    max-width: 48px;
     border-radius: 50%;
     box-shadow: tan 2px 1px;
     

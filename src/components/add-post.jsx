@@ -1,4 +1,5 @@
 import React from 'react';
+import './add-post.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import elonAva from '../img/avatar.jpg';
@@ -9,7 +10,7 @@ const AddPost = () => {
     const dispatch = useDispatch();
 
     const anakinAva = "https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Anakin-Jedi.jpg/220px-Anakin-Jedi.jpg";
-    const shepardAva = "https://static.wikia.nocookie.net/mass-effect-ultimate-fannon-fanfiction/images/6/6b/Tumblr_pawng3fwD61sif4wjo1_1280.jpeg/revision/latest?cb=20191208044905";
+    const shepardAva = "https://i.pinimg.com/originals/a7/e8/f3/a7e8f34c2523402796d236120673e0de.jpg";
     const silverhandAva = "https://i.pinimg.com/originals/85/ad/f8/85adf800892ff6927077a0d54386bfa6.png";
     const kikiAva = "https://cs10.pikabu.ru/post_img/big/2020/07/08/12/1594238492247893898.png";
 
@@ -22,15 +23,15 @@ const AddPost = () => {
     const handleSelectOption = (e) => {
         setUserName(e.target.value);
         switch (e.target.value) {
-            case 'elon':
+            case 'Elon Musk':
                 setUserPhoto(elonAva);
                 setNickname('@elonmusk');
                 break;
-            case 'anakin':
+            case 'Anakin Skywalker':
                 setUserPhoto(anakinAva);
                 setNickname('@dart_vader');
                 break;
-            case 'shepard':
+            case 'Jhon Shepard':
                 setUserPhoto(shepardAva);
                 setNickname('@SPECTR');
                 break;
@@ -38,7 +39,7 @@ const AddPost = () => {
                 setUserPhoto(silverhandAva);
                 setNickname('@f*ck_arasaka');
                 break;
-            case 'kiki':
+            case 'Kiki Vhyce':
                 setUserPhoto(kikiAva);
                 setNickname('@butt-queen');
                 break;
@@ -74,6 +75,7 @@ const AddPost = () => {
             footerRetwIconContent: 170.1 + 'k',
             footerLikeIconContent: 1 + 'm'
         }
+
         dispatch(addPost(postData));
     }
 
@@ -83,73 +85,17 @@ const AddPost = () => {
             <input type="url" placeholder="Please paste publications image url" onChange={handlePhotoURL} className='url-input'></input>
             <select onClick={handleSelectOption} className='select-input'>
                 <option disabled>Choose person</option>
-                <option value="elon">Elon Musk</option>
-                <option value="anakin">Anakin Skywalker</option>
-                <option value="shepard">Jhon Shepard</option>
+                <option value="Elon Musk">Elon Musk</option>
+                <option value="Anakin Skywalker">Anakin Skywalker</option>
+                <option value="Jhon Shepard">Jhon Shepard</option>
                 <option value="Jhonny Silverhand">Jhonny Silverhand</option>
-                <option value="kiki">Kiki Vhyce</option>
+                <option value="Kiki Vhyce">Kiki Vhyce</option>
             </select>
-            <button onClick={handleAddPost}>Add post</button>
+            <button onClick={handleAddPost} style={{ marginBottom: 20 }}>Add post</button>
         </div>
     )
 };
 
 export default AddPost;
 
-  // const handleText = (e) => {
-    //     return e.target.value;
-    // }
 
-    // const handleUrl = (e) => {
-    //     return e.target.value;
-    // }
-
-    // const handleOption = (e) => {
-    //     return e.target.value;
-    // }
-
-    // const getAvatar = () => {
-    //     let select = document.querySelector('.select-input');
-    //     if (select.value === 'elon') {
-    //         return elonAva;
-    //     } else if (select.value === 'anakin') {
-    //         return anakinAva;
-    //     } else if (select.value === 'shepard') {
-    //         return shepardAva;
-    //     } else if (select.value === 'silverhand') {
-    //         return silverhandAva;
-    //     } else if (select.value === 'kiki') {
-    //         return kikiAva;
-    //     }
-    // }
-
-    // const getNick = () => {
-    //     let select = document.querySelector('.select-input');
-    //     if (select.value === 'elon') {
-    //         return '@elonmusk';
-    //     } else if (select.value === 'anakin') {
-    //         return '@dart_vader';
-    //     } else if (select.value === 'shepard') {
-    //         return '@SPECTR';
-    //     } else if (select.value === 'silverhand') {
-    //         return '@f*ck_arasaka';
-    //     } else if (select.value === 'kiki') {
-    //         return '@butt-queen';
-    //     }
-    // }
-
-    // const hollowPost = {
-    //     userAvatar: getAvatar,
-    //     userName: handleOption,
-    //     nick: getNick,
-    //     date: new Date(),
-    //     userText: handleText,
-    //     postImg: handleUrl,
-    //     footerRespIconContent: 23.9 + 'k',
-    //     footerRetwIconContent: 170.1 + 'k',
-    //     footerLikeIconContent: 1 + 'm'
-    // }
-
-    // const sendNewPost = () => {
-    //     return dispatch(addPost(hollowPost));
-    // }
